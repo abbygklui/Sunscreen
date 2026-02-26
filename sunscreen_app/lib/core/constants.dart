@@ -32,4 +32,13 @@ class AppConstants {
   static const String prefTimerActive = 'timer_active';
   static const String prefLatitude = 'latitude';
   static const String prefLongitude = 'longitude';
+  static const String prefTrackerWeekPrefix = 'tracker_week_';
+
+  // Notification toggles
+  static const String prefMorningReminderEnabled = 'morning_reminder_enabled';
+  static const String prefUvAlertEnabled = 'uv_alert_enabled';
+
+  // Notification defaults
+  static const bool defaultMorningReminderEnabled = true;
+  static const bool defaultUvAlertEnabled = true;
 }
