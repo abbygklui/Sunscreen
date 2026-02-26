@@ -1,50 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 /// Text styles for the Sunscreen app.
-/// Uses Nunito font family (loaded via google_fonts).
+/// Uses Figtree font family (loaded via google_fonts).
 class AppTextStyles {
   AppTextStyles._();
 
-  static const String _fontFamily = 'Nunito';
-
-  static const TextStyle display = TextStyle(
-    fontFamily: _fontFamily,
+  static final TextStyle display = GoogleFonts.figtree(
     fontSize: 32,
     fontWeight: FontWeight.w700,
     color: AppColors.darkCocoa,
   );
 
-  static const TextStyle headline = TextStyle(
-    fontFamily: _fontFamily,
+  static final TextStyle headline = GoogleFonts.figtree(
     fontSize: 24,
     fontWeight: FontWeight.w700,
     color: AppColors.darkCocoa,
   );
 
-  static const TextStyle title = TextStyle(
-    fontFamily: _fontFamily,
+  static final TextStyle title = GoogleFonts.figtree(
     fontSize: 20,
     fontWeight: FontWeight.w600,
     color: AppColors.darkCocoa,
   );
 
-  static const TextStyle bodyLarge = TextStyle(
-    fontFamily: _fontFamily,
+  static final TextStyle bodyLarge = GoogleFonts.figtree(
     fontSize: 16,
     fontWeight: FontWeight.w400,
     color: AppColors.warmGray,
   );
 
-  static const TextStyle body = TextStyle(
-    fontFamily: _fontFamily,
+  static final TextStyle body = GoogleFonts.figtree(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: AppColors.warmGray,
   );
 
-  static const TextStyle label = TextStyle(
-    fontFamily: _fontFamily,
+  static final TextStyle label = GoogleFonts.figtree(
     fontSize: 12,
     fontWeight: FontWeight.w600,
     color: AppColors.warmGray,
