@@ -37,6 +37,12 @@ class TimerService {
     );
   }
 
+  /// Persists the reapply interval without starting a new timer.
+  Future<void> setInterval(int intervalMinutes) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(AppConstants.prefReapplyMinutes, intervalMinutes);
+  }
+
   /// Stops and clears the timer.
   Future<TimerState> stopTimer() async {
     final prefs = await SharedPreferences.getInstance();
