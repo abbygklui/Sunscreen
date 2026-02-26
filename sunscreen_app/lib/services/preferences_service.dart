@@ -1,0 +1,52 @@
+import 'package:shared_preferences/shared_preferences.dart';
+import '../core/constants.dart';
+
+/// Wrapper around SharedPreferences for reading/writing user settings.
+class PreferencesService {
+  /// Gets the reapply interval in minutes.
+  Future<int> getReapplyMinutes() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(AppConstants.prefReapplyMinutes) ??
+        AppConstants.defaultReapplyMinutes;
+  }
+
+  /// Sets the reapply interval in minutes.
+  Future<void> setReapplyMinutes(int minutes) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(AppConstants.prefReapplyMinutes, minutes);
+  }
+
+  /// Gets the UV threshold for morning alerts.
+  Future<double> getUvThreshold() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getDouble(AppConstants.prefUvThreshold) ??
+        AppConstants.defaultUvThreshold;
+  }
+
+  /// Sets the UV threshold for morning alerts.
+  Future<void> setUvThreshold(double threshold) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setDouble(AppConstants.prefUvThreshold, threshold);
+  }
+
+  /// Gets the morning alert hour.
+  Future<int> getAlertHour() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(AppConstants.prefAlertHour) ??
+        AppConstants.defaultAlertHour;
+  }
+
+  /// Gets the morning alert minute.
+  Future<int> getAlertMinute() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(AppConstants.prefAlertMinute) ??
+        AppConstants.defaultAlertMinute;
+  }
+
+  /// Sets the morning alert time.
+  Future<void> setAlertTime(int hour, int minute) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(AppConstants.prefAlertHour, hour);
+    await prefs.setInt(AppConstants.prefAlertMinute, minute);
+  }
+}
